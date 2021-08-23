@@ -1,0 +1,22 @@
+*.class
+*.log
+
+# Gradle specific
+.DS_Store
+.gradle
+.gradletasknamecache
+build
+.composite_projects
+
+# Scala-IDE specific
+.scala_dependencies
+.worksheet
+/classes/
+out/
+
+# IntelliJ specific
+.idea
+*.iml
+*.ipr
+*.iws
+
