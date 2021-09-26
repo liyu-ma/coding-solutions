@@ -20,3 +20,6 @@ out/
 *.ipr
 *.iws
 
+# Java checkstyle
+checkstyle-*.jar
+config/google_checks.xml

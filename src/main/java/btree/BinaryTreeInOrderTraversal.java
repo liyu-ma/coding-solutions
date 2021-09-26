@@ -40,8 +40,4 @@ public class BinaryTreeInOrderTraversal {
 
          return res;
     }
-
-    public static void main(String[] args) {
-
-    }
 }

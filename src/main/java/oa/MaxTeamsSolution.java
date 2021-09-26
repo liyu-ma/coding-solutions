@@ -1,6 +1,7 @@
 package oa;
 
 import java.util.Arrays;
+import java.util.BitSet;
 
 public class MaxTeamsSolution {
 
@@ -18,16 +19,16 @@ public class MaxTeamsSolution {
         int l = 0, r = 0;
 
         int count = 1;
-        for (int i=0; i<skills.length; i++) {
+        for (int i = 0; i < skills.length; i++) {
             if (i == l) continue;
             if (skills[i] - skills[l] <= maxDiff) {
                 count++;
                 if (count == TEAM_SIZE) { // can form a team
                     teams++;
-                    l = i+1;
+                    l = i + 1;
                     count = 1;
                 }
-            } else if (skills[i] - skills[l+1] <= maxDiff) {
+            } else if (skills[i] - skills[l + 1] <= maxDiff) {
                 l++;
             } else {
                 l = i;
@@ -39,8 +40,16 @@ public class MaxTeamsSolution {
     }
 
     public static void main(String[] args) {
-        int[] skills = { 1,1,1,2,2,2};
-        int maxDiff = 0;
-        System.out.println("Max teams: " + maxTeams(maxDiff, skills));
+        BitSet bitSet = new BitSet(3);
+        bitSet.set(0);
+        bitSet.set(1);
+
+        BitSet other = new BitSet(3);
+        other.set(0);
+        other.set(1);
+
+        bitSet.xor(other);
+
+        System.out.println(bitSet.cardinality());
     }
 }
